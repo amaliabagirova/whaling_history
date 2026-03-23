@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""Build crew analytics for longread sections.
-
-Reads crew.csv (default: ~/Desktop/crew.csv), computes summary statistics,
-distribution arrays, and updates data.js with a crewSummary payload.
-"""
 
 from __future__ import annotations
 
@@ -370,7 +364,6 @@ def main() -> None:
         row["height_wass"] = wasserstein(xh, yh)
         pair_stats.append(row)
 
-    # regression
     def ols_with_dummies(values: np.ndarray, years: List[int], groups: List[str], ref: str = "core_south_coast"):
         y = np.array(values, dtype=float)
         year = np.array(years, dtype=float)
